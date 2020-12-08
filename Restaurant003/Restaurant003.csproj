@@ -1828,6 +1828,9 @@
     <Compile Include="AdminPages.Master.designer.cs">
       <DependentUpon>AdminPages.Master</DependentUpon>
     </Compile>
+    <Compile Include="App_Code\MonAn.cs" />
+    <Compile Include="App_Code\DanhMuc.cs" />
+    <Compile Include="App_Code\DataUtil.cs" />
     <Compile Include="MonAn.aspx.cs">
       <DependentUpon>MonAn.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>

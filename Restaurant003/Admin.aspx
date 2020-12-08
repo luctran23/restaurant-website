@@ -2,6 +2,8 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="title" runat="server">
     Biểu đồ
 </asp:Content>
+<asp:Content ID="Content3" ContentPlaceHolderID="pageTitle" runat="server">Biểu đồ</asp:Content>
+<asp:Content ID="Content4" ContentPlaceHolderID="pagePath" runat="server">Biểu đồ</asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="content" runat="server">
 
     <section class="content">
