@@ -70,6 +70,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Admin.aspx" />
+    <Content Include="Ban.aspx" />
     <Content Include="build\config\postcss.config.js" />
     <Content Include="build\config\rollup.config.js" />
     <Content Include="build\js\AdminLTE.js" />
@@ -88,6 +89,8 @@
     <Content Include="build\npm\DocsPublish.js" />
     <Content Include="build\npm\Plugins.js" />
     <Content Include="build\npm\Publish.js" />
+    <Content Include="CtHoaDon.aspx" />
+    <Content Include="DangKy.aspx" />
     <Content Include="dist\css\adminlte.css" />
     <Content Include="dist\css\adminlte.min.css" />
     <Content Include="dist\css\alt\adminlte.components.css" />
@@ -140,6 +143,27 @@
     <Content Include="dist\js\pages\dashboard.js" />
     <Content Include="dist\js\pages\dashboard2.js" />
     <Content Include="dist\js\pages\dashboard3.js" />
+    <Content Include="HoaDon.aspx" />
+    <Content Include="Images\a1.jpg" />
+    <Content Include="Images\a10.jpg" />
+    <Content Include="Images\a11.jpg" />
+    <Content Include="Images\a12.jpg" />
+    <Content Include="Images\a13.jpg" />
+    <Content Include="Images\a14.jpg" />
+    <Content Include="Images\a15.jpg" />
+    <Content Include="Images\a16.jpg" />
+    <Content Include="Images\a17.jpg" />
+    <Content Include="Images\a2.jpg" />
+    <Content Include="Images\a3.jpg" />
+    <Content Include="Images\a4.jpg" />
+    <Content Include="Images\a5.jpg" />
+    <Content Include="Images\a6.jpg" />
+    <Content Include="Images\a7.jpg" />
+    <Content Include="Images\a8.jpg" />
+    <Content Include="Images\a9.jpg" />
+    <Content Include="KhachHang.aspx" />
+    <Content Include="LienHe.aspx" />
+    <Content Include="Login.aspx" />
     <Content Include="MonAn.aspx" />
     <Content Include="pages\calendar.html" />
     <Content Include="pages\charts\chartjs.html" />
@@ -1810,8 +1834,16 @@
     <Content Include="plugins\toastr\toastr.css" />
     <Content Include="plugins\toastr\toastr.min.css" />
     <Content Include="plugins\toastr\toastr.min.js" />
+    <Content Include="SuaBan.aspx" />
+    <Content Include="SuaMon.aspx" />
+    <Content Include="SuaTaiKhoan.aspx" />
+    <Content Include="TaiKhoan.aspx" />
+    <Content Include="ThemBan.aspx" />
+    <Content Include="ThemMon.aspx" />
+    <Content Include="ThemTaiKhoan.aspx" />
     <Content Include="Web.config" />
     <Content Include="WebForm1.aspx" />
+    <Content Include="YeuCauDatBan.aspx" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Admin.aspx.cs">
@@ -1828,9 +1860,66 @@
     <Compile Include="AdminPages.Master.designer.cs">
       <DependentUpon>AdminPages.Master</DependentUpon>
     </Compile>
-    <Compile Include="App_Code\MonAn.cs" />
+    <Compile Include="App_Code\Ban.cs" />
+    <Compile Include="App_Code\CtHoaDon.cs" />
+    <Compile Include="App_Code\CtMon.cs" />
     <Compile Include="App_Code\DanhMuc.cs" />
     <Compile Include="App_Code\DataUtil.cs" />
+    <Compile Include="App_Code\HoaDon.cs" />
+    <Compile Include="App_Code\KhachHang.cs" />
+    <Compile Include="App_Code\LienHe.cs" />
+    <Compile Include="App_Code\MonAn.cs" />
+    <Compile Include="App_Code\TaiKhoan.cs" />
+    <Compile Include="App_Code\YeuCauDatBan.cs" />
+    <Compile Include="Ban.aspx.cs">
+      <DependentUpon>Ban.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Ban.aspx.designer.cs">
+      <DependentUpon>Ban.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="CtHoaDon.aspx.cs">
+      <DependentUpon>CtHoaDon.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="CtHoaDon.aspx.designer.cs">
+      <DependentUpon>CtHoaDon.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="DangKy.aspx.cs">
+      <DependentUpon>DangKy.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="DangKy.aspx.designer.cs">
+      <DependentUpon>DangKy.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="HoaDon.aspx.cs">
+      <DependentUpon>HoaDon.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="HoaDon.aspx.designer.cs">
+      <DependentUpon>HoaDon.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="KhachHang.aspx.cs">
+      <DependentUpon>KhachHang.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="KhachHang.aspx.designer.cs">
+      <DependentUpon>KhachHang.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="LienHe.aspx.cs">
+      <DependentUpon>LienHe.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="LienHe.aspx.designer.cs">
+      <DependentUpon>LienHe.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Login.aspx.cs">
+      <DependentUpon>Login.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Login.aspx.designer.cs">
+      <DependentUpon>Login.aspx</DependentUpon>
+    </Compile>
     <Compile Include="MonAn.aspx.cs">
       <DependentUpon>MonAn.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -1839,12 +1928,68 @@
       <DependentUpon>MonAn.aspx</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SuaBan.aspx.cs">
+      <DependentUpon>SuaBan.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="SuaBan.aspx.designer.cs">
+      <DependentUpon>SuaBan.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="SuaMon.aspx.cs">
+      <DependentUpon>SuaMon.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="SuaMon.aspx.designer.cs">
+      <DependentUpon>SuaMon.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="SuaTaiKhoan.aspx.cs">
+      <DependentUpon>SuaTaiKhoan.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="SuaTaiKhoan.aspx.designer.cs">
+      <DependentUpon>SuaTaiKhoan.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="TaiKhoan.aspx.cs">
+      <DependentUpon>TaiKhoan.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="TaiKhoan.aspx.designer.cs">
+      <DependentUpon>TaiKhoan.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ThemBan.aspx.cs">
+      <DependentUpon>ThemBan.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ThemBan.aspx.designer.cs">
+      <DependentUpon>ThemBan.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ThemMon.aspx.cs">
+      <DependentUpon>ThemMon.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ThemMon.aspx.designer.cs">
+      <DependentUpon>ThemMon.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ThemTaiKhoan.aspx.cs">
+      <DependentUpon>ThemTaiKhoan.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ThemTaiKhoan.aspx.designer.cs">
+      <DependentUpon>ThemTaiKhoan.aspx</DependentUpon>
+    </Compile>
     <Compile Include="WebForm1.aspx.cs">
       <DependentUpon>WebForm1.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="WebForm1.aspx.designer.cs">
       <DependentUpon>WebForm1.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="YeuCauDatBan.aspx.cs">
+      <DependentUpon>YeuCauDatBan.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="YeuCauDatBan.aspx.designer.cs">
+      <DependentUpon>YeuCauDatBan.aspx</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>
@@ -2027,6 +2172,7 @@
   <ItemGroup>
     <Service Include="{4A0DDDB5-7A95-4FBF-97CC-616D07737A77}" />
   </ItemGroup>
+  <ItemGroup />
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>

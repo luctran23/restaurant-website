@@ -13,7 +13,7 @@ namespace Restaurant003
         DataUtil data = new DataUtil();
         protected void Page_Load(object sender, EventArgs e)
         {
-            if(!Page.IsPostBack)
+            if(!IsPostBack)
             {
                 HienThi();
             }
@@ -29,6 +29,30 @@ namespace Restaurant003
         {
             gridMon.PageIndex = e.NewPageIndex;
             HienThi();
+        }
+
+        protected void gridMon_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+        protected void Xoa_Click(object sender, CommandEventArgs e)
+        {
+            if(e.CommandName == "xoa")
+            {
+                int m = Convert.ToInt16(e.CommandArgument);
+                data.XoaMon(m);
+                HienThi();
+            }
+        }
+        protected void Sua_Click(object sender, CommandEventArgs e)
+        {
+            if (e.CommandName == "sua")
+            {
+                int m = Convert.ToInt16(e.CommandArgument);
+                Restaurant003.App_Code.MonAn mon = data.Lay1Mon(m);
+                Session["mon"] = mon;
+                Response.Redirect("SuaMon.aspx");
+            }
         }
     }
 }

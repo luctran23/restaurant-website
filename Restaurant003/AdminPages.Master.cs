@@ -11,7 +11,20 @@ namespace Restaurant003
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+            if(Session["username"] != null)
+            {
+                tenNgdung.Text = Session["username"].ToString();
+            }
+            else
+            {
+                Response.Redirect("Login.aspx");
+            }
+        }
 
+        protected void btnDx_Click(object sender, EventArgs e)
+        {
+            Session.RemoveAll();
+            Response.Redirect("Login.aspx");
         }
     }
 }
