@@ -89,6 +89,18 @@
     <Content Include="build\npm\DocsPublish.js" />
     <Content Include="build\npm\Plugins.js" />
     <Content Include="build\npm\Publish.js" />
+    <Content Include="Cart.aspx" />
+    <Content Include="css\animate.css" />
+    <Content Include="css\baguetteBox.min.css" />
+    <Content Include="css\bootstrap.min.css" />
+    <Content Include="css\classic.css" />
+    <Content Include="css\classic.date.css" />
+    <Content Include="css\classic.time.css" />
+    <Content Include="css\custom.css" />
+    <Content Include="css\font-awesome.min.css" />
+    <Content Include="css\responsive.css" />
+    <Content Include="css\style.css" />
+    <Content Include="css\superslides.css" />
     <Content Include="CtHoaDon.aspx" />
     <Content Include="DangKy.aspx" />
     <Content Include="dist\css\adminlte.css" />
@@ -143,7 +155,54 @@
     <Content Include="dist\js\pages\dashboard.js" />
     <Content Include="dist\js\pages\dashboard2.js" />
     <Content Include="dist\js\pages\dashboard3.js" />
+    <Content Include="fonts\fontawesome-webfont.svg" />
     <Content Include="HoaDon.aspx" />
+    <Content Include="Home.aspx" />
+    <Content Include="images2\about-bg.jpg" />
+    <Content Include="images2\about-img.jpg" />
+    <Content Include="images2\all-bg.jpg" />
+    <Content Include="images2\avt-img.jpg" />
+    <Content Include="images2\blog-img-01.jpg" />
+    <Content Include="images2\blog-img-02.jpg" />
+    <Content Include="images2\blog-img-03.jpg" />
+    <Content Include="images2\blog-img-04.jpg" />
+    <Content Include="images2\blog-img-05.jpg" />
+    <Content Include="images2\blog-img-06.jpg" />
+    <Content Include="images2\blog-img-07.jpg" />
+    <Content Include="images2\blog-img-08.jpg" />
+    <Content Include="images2\blog-img-09.jpg" />
+    <Content Include="images2\footer-bg.jpg" />
+    <Content Include="images2\gallery-img-01.jpg" />
+    <Content Include="images2\gallery-img-02.jpg" />
+    <Content Include="images2\gallery-img-03.jpg" />
+    <Content Include="images2\gallery-img-04.jpg" />
+    <Content Include="images2\gallery-img-05.jpg" />
+    <Content Include="images2\gallery-img-06.jpg" />
+    <Content Include="images2\img-01.jpg" />
+    <Content Include="images2\img-02.jpg" />
+    <Content Include="images2\img-03.jpg" />
+    <Content Include="images2\img-04.jpg" />
+    <Content Include="images2\img-05.jpg" />
+    <Content Include="images2\img-06.jpg" />
+    <Content Include="images2\img-07.jpg" />
+    <Content Include="images2\img-08.jpg" />
+    <Content Include="images2\img-09.jpg" />
+    <Content Include="images2\inner-blog-img.jpg" />
+    <Content Include="images2\logo.png" />
+    <Content Include="images2\post-img-01.jpg" />
+    <Content Include="images2\post-img-02.jpg" />
+    <Content Include="images2\post-img-03.jpg" />
+    <Content Include="images2\qt-bg.jpg" />
+    <Content Include="images2\quotations-button.png" />
+    <Content Include="images2\slider-01.jpg" />
+    <Content Include="images2\slider-02.jpg" />
+    <Content Include="images2\slider-03.jpg" />
+    <Content Include="images2\stuff-img-01.jpg" />
+    <Content Include="images2\stuff-img-02.jpg" />
+    <Content Include="images2\stuff-img-03.jpg" />
+    <Content Include="images2\stuff-img-04.jpg" />
+    <Content Include="images2\stuff-img-05.jpg" />
+    <Content Include="images2\stuff-img-06.jpg" />
     <Content Include="Images\a1.jpg" />
     <Content Include="Images\a10.jpg" />
     <Content Include="Images\a11.jpg" />
@@ -161,10 +220,26 @@
     <Content Include="Images\a7.jpg" />
     <Content Include="Images\a8.jpg" />
     <Content Include="Images\a9.jpg" />
+    <Content Include="js\baguetteBox.min.js" />
+    <Content Include="js\bootstrap.min.js" />
+    <Content Include="js\contact-form-script.js" />
+    <Content Include="js\custom.js" />
+    <Content Include="js\form-validator.min.js" />
+    <Content Include="js\images-loded.min.js" />
+    <Content Include="js\isotope.min.js" />
+    <Content Include="js\jquery-3.2.1.min.js" />
+    <Content Include="js\jquery.mapify.js" />
+    <Content Include="js\jquery.superslides.min.js" />
+    <Content Include="js\legacy.js" />
+    <Content Include="js\picker.date.js" />
+    <Content Include="js\picker.js" />
+    <Content Include="js\picker.time.js" />
+    <Content Include="js\popper.min.js" />
     <Content Include="KhachHang.aspx" />
     <Content Include="LienHe.aspx" />
     <Content Include="Login.aspx" />
     <Content Include="MonAn.aspx" />
+    <Content Include="MonAnDetails.aspx" />
     <Content Include="pages\calendar.html" />
     <Content Include="pages\charts\chartjs.html" />
     <Content Include="pages\charts\flot.html" />
@@ -216,6 +291,7 @@
     <Content Include="pages\UI\sliders.html" />
     <Content Include="pages\UI\timeline.html" />
     <Content Include="pages\widgets.html" />
+    <Content Include="php\form-process.php" />
     <Content Include="plugins\bootstrap-slider\bootstrap-slider.js" />
     <Content Include="plugins\bootstrap-slider\bootstrap-slider.min.js" />
     <Content Include="plugins\bootstrap-slider\css\bootstrap-slider.css" />
@@ -1861,6 +1937,7 @@
       <DependentUpon>AdminPages.Master</DependentUpon>
     </Compile>
     <Compile Include="App_Code\Ban.cs" />
+    <Compile Include="App_Code\CartItem.cs" />
     <Compile Include="App_Code\CtHoaDon.cs" />
     <Compile Include="App_Code\CtMon.cs" />
     <Compile Include="App_Code\DanhMuc.cs" />
@@ -1877,6 +1954,20 @@
     </Compile>
     <Compile Include="Ban.aspx.designer.cs">
       <DependentUpon>Ban.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Cart.aspx.cs">
+      <DependentUpon>Cart.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Cart.aspx.designer.cs">
+      <DependentUpon>Cart.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ClientPages.Master.cs">
+      <DependentUpon>ClientPages.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ClientPages.Master.designer.cs">
+      <DependentUpon>ClientPages.Master</DependentUpon>
     </Compile>
     <Compile Include="CtHoaDon.aspx.cs">
       <DependentUpon>CtHoaDon.aspx</DependentUpon>
@@ -1899,6 +1990,14 @@
     <Compile Include="HoaDon.aspx.designer.cs">
       <DependentUpon>HoaDon.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Home.aspx.cs">
+      <DependentUpon>Home.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Home.aspx.designer.cs">
+      <DependentUpon>Home.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Home.cs" />
     <Compile Include="KhachHang.aspx.cs">
       <DependentUpon>KhachHang.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -1926,6 +2025,13 @@
     </Compile>
     <Compile Include="MonAn.aspx.designer.cs">
       <DependentUpon>MonAn.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="MonAnDetails.aspx.cs">
+      <DependentUpon>MonAnDetails.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="MonAnDetails.aspx.designer.cs">
+      <DependentUpon>MonAnDetails.aspx</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="SuaBan.aspx.cs">
@@ -2085,6 +2191,12 @@
     <Content Include="dist\js\adminlte.js.map" />
     <Content Include="dist\js\adminlte.min.js.map" />
     <Content Include="AdminPages.Master" />
+    <Content Include="ClientPages.Master" />
+    <Content Include="fonts\fontawesome-webfont.eot" />
+    <Content Include="fonts\fontawesome-webfont.ttf" />
+    <Content Include="fonts\fontawesome-webfont.woff" />
+    <Content Include="fonts\fontawesome-webfont.woff2" />
+    <Content Include="fonts\FontAwesome.otf" />
     <None Include="packages.config" />
     <Content Include="plugins\.npmignore" />
     <Content Include="plugins\bootstrap\js\bootstrap.bundle.js.map" />
