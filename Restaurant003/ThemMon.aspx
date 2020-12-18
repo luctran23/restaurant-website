@@ -12,15 +12,15 @@
     <div class="card-body">
         <div class="form-group">
             <label for="lbTenMon">Tên món</label>
-            <asp:TextBox ID="lbTenMon" runat="server" CssClass="form-control" />
+            <asp:TextBox ID="lbTenMon" runat="server" CssClass="form-control" required />
         </div>
         <div class="form-group">
             <label for="lbSoLuong">Số lượng</label>
-            <asp:TextBox ID="lbSoLuong" runat="server"  CssClass="form-control" />
+            <asp:TextBox ID="lbSoLuong" runat="server"  CssClass="form-control" required/>
         </div>
         <div class="form-group">
             <label for="lbDonGia">Đơn giá</label>
-            <asp:TextBox ID="lbDonGia" runat="server"  CssClass="form-control" />
+            <asp:TextBox ID="lbDonGia" runat="server"  CssClass="form-control" required/>
         </div>
         <div class="form-group">
             <label for="lbAnh">Ảnh</label>
@@ -36,7 +36,7 @@
         </div>
         <div class="form-group">
             <label for="lbDonGiaKm">Giá khuyến mãi</label>
-            <asp:TextBox ID="lbDonGiaKm" runat="server"  CssClass="form-control" />
+            <asp:TextBox ID="lbDonGiaKm" runat="server"  CssClass="form-control" required/>
         </div>
         <asp:DropDownList ID="ddlMaDm" runat="server" size="1" CssClass="form-control"/>
     </div>

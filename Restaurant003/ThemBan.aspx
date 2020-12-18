@@ -12,11 +12,11 @@
     <div class="card-body">
         <div class="form-group">
             <label for="txtTenBan">Tên bàn</label>
-            <asp:TextBox ID="txtTenBan" runat="server" CssClass="form-control" />
+            <asp:TextBox ID="txtTenBan" runat="server" CssClass="form-control" required/>
         </div>
         <div class="form-group">
             <label for="txtTinhTrang">Tình trạng</label>
-            <asp:TextBox ID="txtTinhTrang" runat="server"  CssClass="form-control" />
+            <asp:TextBox ID="txtTinhTrang" runat="server"  CssClass="form-control" required/>
         </div>
     </div>
     <!-- /.card-body -->

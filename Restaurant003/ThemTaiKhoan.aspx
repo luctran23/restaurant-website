@@ -12,11 +12,11 @@
     <div class="card-body">
         <div class="form-group">
             <label for="txtTentk">Tên tài khoản</label>
-            <asp:TextBox ID="txtTentk" runat="server" CssClass="form-control" />
+            <asp:TextBox ID="txtTentk" runat="server" CssClass="form-control" required/>
         </div>
         <div class="form-group">
             <label for="txtMatKhau">Mật khẩu</label>
-            <asp:TextBox ID="txtMatKhau" runat="server"  CssClass="form-control" TextMode="Password" />
+            <asp:TextBox ID="txtMatKhau" runat="server"  CssClass="form-control" TextMode="Password" required/>
         </div>
     </div>
     <!-- /.card-body -->

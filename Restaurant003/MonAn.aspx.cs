@@ -16,6 +16,20 @@ namespace Restaurant003
             if(!IsPostBack)
             {
                 HienThi();
+                txtTimDmMon.DataSource = data.LayDm();
+                txtTimDmMon.DataTextField = "tenDm";
+                txtTimDmMon.DataValueField = "maDm";
+                DataBind();
+            }
+            if (ddlMaDm.SelectedValue == "Tên món")
+            {
+                txtTimTenMon.Visible = true;
+                txtTimDmMon.Visible = false;
+            }
+            else
+            {
+                txtTimTenMon.Visible = false;
+                txtTimDmMon.Visible = true;
             }
             
         }
@@ -52,6 +66,43 @@ namespace Restaurant003
                 Restaurant003.App_Code.MonAn mon = data.Lay1Mon(m);
                 Session["mon"] = mon;
                 Response.Redirect("SuaMon.aspx");
+            }
+        }
+
+        protected void btnTimKiem_Click(object sender, EventArgs e)
+        {
+            if (ddlMaDm.SelectedValue == "Danh mục")
+            {
+                
+                int maDm = int.Parse(txtTimDmMon.SelectedValue);
+                if(data.LayDsMonAnTheoDm(maDm).Count == 0)
+                {
+                    testdm.Text = "Không tìm thấy món ăn nào có danh mục này";
+                    gridMon.Visible = false;
+                }
+                else
+                {
+                    gridMon.Visible = true;
+                    gridMon.DataSource = data.LayDsMonAnTheoDm(maDm);
+                    DataBind();
+                }
+                
+            }
+            if(ddlMaDm.SelectedValue == "Tên món")
+            {
+                string tenMon = txtTimTenMon.Text;
+                if(data.LayDsMonAnTheoTen(tenMon).Count == 0)
+                {
+                    testdm.Text = "Không tìm thấy món ăn nào có tên này";
+                    gridMon.Visible = false;
+                }
+                else
+                {
+                    gridMon.Visible = true;
+                    gridMon.DataSource = data.LayDsMonAnTheoTen(tenMon);
+                    DataBind();
+                }
+                
             }
         }
     }

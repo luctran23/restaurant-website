@@ -46,6 +46,7 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="Microsoft.CSharp" />
+    <Reference Include="PresentationCore" />
     <Reference Include="System.Web.DynamicData" />
     <Reference Include="System.Web.Entity" />
     <Reference Include="System.Web.ApplicationServices" />
@@ -69,8 +70,10 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="About.aspx" />
     <Content Include="Admin.aspx" />
     <Content Include="Ban.aspx" />
+    <Content Include="bgImages\bg3.jpg" />
     <Content Include="build\config\postcss.config.js" />
     <Content Include="build\config\rollup.config.js" />
     <Content Include="build\js\AdminLTE.js" />
@@ -90,6 +93,7 @@
     <Content Include="build\npm\Plugins.js" />
     <Content Include="build\npm\Publish.js" />
     <Content Include="Cart.aspx" />
+    <Content Include="ContactClients.aspx" />
     <Content Include="css\animate.css" />
     <Content Include="css\baguetteBox.min.css" />
     <Content Include="css\bootstrap.min.css" />
@@ -103,6 +107,9 @@
     <Content Include="css\superslides.css" />
     <Content Include="CtHoaDon.aspx" />
     <Content Include="DangKy.aspx" />
+    <Content Include="DangKyClient.aspx" />
+    <Content Include="DangNhap.aspx" />
+    <Content Include="DatBan.aspx" />
     <Content Include="dist\css\adminlte.css" />
     <Content Include="dist\css\adminlte.min.css" />
     <Content Include="dist\css\alt\adminlte.components.css" />
@@ -238,6 +245,7 @@
     <Content Include="KhachHang.aspx" />
     <Content Include="LienHe.aspx" />
     <Content Include="Login.aspx" />
+    <Content Include="Menu.aspx" />
     <Content Include="MonAn.aspx" />
     <Content Include="MonAnDetails.aspx" />
     <Content Include="pages\calendar.html" />
@@ -1910,10 +1918,12 @@
     <Content Include="plugins\toastr\toastr.css" />
     <Content Include="plugins\toastr\toastr.min.css" />
     <Content Include="plugins\toastr\toastr.min.js" />
+    <Content Include="StyleSheet1.css" />
     <Content Include="SuaBan.aspx" />
     <Content Include="SuaMon.aspx" />
     <Content Include="SuaTaiKhoan.aspx" />
     <Content Include="TaiKhoan.aspx" />
+    <Content Include="ThanhToan.aspx" />
     <Content Include="ThemBan.aspx" />
     <Content Include="ThemMon.aspx" />
     <Content Include="ThemTaiKhoan.aspx" />
@@ -1922,6 +1932,13 @@
     <Content Include="YeuCauDatBan.aspx" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="About.aspx.cs">
+      <DependentUpon>About.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="About.aspx.designer.cs">
+      <DependentUpon>About.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Admin.aspx.cs">
       <DependentUpon>Admin.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -1947,6 +1964,7 @@
     <Compile Include="App_Code\LienHe.cs" />
     <Compile Include="App_Code\MonAn.cs" />
     <Compile Include="App_Code\TaiKhoan.cs" />
+    <Compile Include="App_Code\TaiKhoanKhach.cs" />
     <Compile Include="App_Code\YeuCauDatBan.cs" />
     <Compile Include="Ban.aspx.cs">
       <DependentUpon>Ban.aspx</DependentUpon>
@@ -1969,6 +1987,13 @@
     <Compile Include="ClientPages.Master.designer.cs">
       <DependentUpon>ClientPages.Master</DependentUpon>
     </Compile>
+    <Compile Include="ContactClients.aspx.cs">
+      <DependentUpon>ContactClients.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ContactClients.aspx.designer.cs">
+      <DependentUpon>ContactClients.aspx</DependentUpon>
+    </Compile>
     <Compile Include="CtHoaDon.aspx.cs">
       <DependentUpon>CtHoaDon.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -1982,6 +2007,27 @@
     </Compile>
     <Compile Include="DangKy.aspx.designer.cs">
       <DependentUpon>DangKy.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="DangKyClient.aspx.cs">
+      <DependentUpon>DangKyClient.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="DangKyClient.aspx.designer.cs">
+      <DependentUpon>DangKyClient.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="DangNhap.aspx.cs">
+      <DependentUpon>DangNhap.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="DangNhap.aspx.designer.cs">
+      <DependentUpon>DangNhap.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="DatBan.aspx.cs">
+      <DependentUpon>DatBan.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="DatBan.aspx.designer.cs">
+      <DependentUpon>DatBan.aspx</DependentUpon>
     </Compile>
     <Compile Include="HoaDon.aspx.cs">
       <DependentUpon>HoaDon.aspx</DependentUpon>
@@ -1997,7 +2043,6 @@
     <Compile Include="Home.aspx.designer.cs">
       <DependentUpon>Home.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Home.cs" />
     <Compile Include="KhachHang.aspx.cs">
       <DependentUpon>KhachHang.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -2018,6 +2063,13 @@
     </Compile>
     <Compile Include="Login.aspx.designer.cs">
       <DependentUpon>Login.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Menu.aspx.cs">
+      <DependentUpon>Menu.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Menu.aspx.designer.cs">
+      <DependentUpon>Menu.aspx</DependentUpon>
     </Compile>
     <Compile Include="MonAn.aspx.cs">
       <DependentUpon>MonAn.aspx</DependentUpon>
@@ -2061,6 +2113,13 @@
     </Compile>
     <Compile Include="TaiKhoan.aspx.designer.cs">
       <DependentUpon>TaiKhoan.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ThanhToan.aspx.cs">
+      <DependentUpon>ThanhToan.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ThanhToan.aspx.designer.cs">
+      <DependentUpon>ThanhToan.aspx</DependentUpon>
     </Compile>
     <Compile Include="ThemBan.aspx.cs">
       <DependentUpon>ThemBan.aspx</DependentUpon>

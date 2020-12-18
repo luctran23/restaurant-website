@@ -52,8 +52,8 @@ H:\MyPrivateDocuments\My_subjects\ASPdotNET\projects\Restaurant003\Restaurant003
 H:\MyPrivateDocuments\My_subjects\ASPdotNET\projects\Restaurant003\Restaurant003\bin\roslyn\VBCSCompiler.exe.config
 H:\MyPrivateDocuments\My_subjects\ASPdotNET\projects\Restaurant003\Restaurant003\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
 H:\MyPrivateDocuments\My_subjects\ASPdotNET\projects\Restaurant003\Restaurant003\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
-H:\MyPrivateDocuments\My_subjects\ASPdotNET\projects\Restaurant003\Restaurant003\obj\Debug\Restaurant003.csprojAssemblyReference.cache
 H:\MyPrivateDocuments\My_subjects\ASPdotNET\projects\Restaurant003\Restaurant003\obj\Debug\Restaurant003.csproj.CoreCompileInputs.cache
 H:\MyPrivateDocuments\My_subjects\ASPdotNET\projects\Restaurant003\Restaurant003\obj\Debug\Restaurant003.csproj.CopyComplete
 H:\MyPrivateDocuments\My_subjects\ASPdotNET\projects\Restaurant003\Restaurant003\obj\Debug\Restaurant003.dll
 H:\MyPrivateDocuments\My_subjects\ASPdotNET\projects\Restaurant003\Restaurant003\obj\Debug\Restaurant003.pdb
+H:\MyPrivateDocuments\My_subjects\ASPdotNET\projects\Restaurant003\Restaurant003\obj\Debug\Restaurant003.csprojAssemblyReference.cache

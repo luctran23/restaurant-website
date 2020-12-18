@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="Cart.aspx.cs" Inherits="Restaurant003.Cart" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="ThanhToan.aspx.cs" Inherits="Restaurant003.ThanhToan" %>
 
 <!DOCTYPE html>
 
@@ -7,7 +7,7 @@
     <meta charset="utf-8"/>
     <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
     <title>
-        Gio hang
+        Thanh toan
     </title>
     <!-- Mobile Metas -->
     <meta name="viewport" content="width=device-width, initial-scale=1"/>
@@ -15,7 +15,7 @@
     <meta name="keywords" content=""/>
     <meta name="description" content=""/>
     <meta name="author" content=""/>
-    <link href="StyleSheet1.css" rel="stylesheet" />
+
     <!-- Site Icons -->
     <link rel="shortcut icon" href="images2/favicon.ico" type="image/x-icon"/>
     <link rel="apple-touch-icon" href="images2/apple-touch-icon.png"/>
@@ -28,14 +28,118 @@
     <link rel="stylesheet" href="css/responsive.css"/>
     <!-- Custom CSS -->
     <link rel="stylesheet" href="css/custom.css"/>
+    <style>
+body {
+  font-family: Arial;
+  font-size: 17px;
+  padding: 8px;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+.row {
+  display: -ms-flexbox; /* IE10 */
+  display: flex;
+  -ms-flex-wrap: wrap; /* IE10 */
+  flex-wrap: wrap;
+  margin: 0 -16px;
+}
+
+.col-25 {
+  -ms-flex: 25%; /* IE10 */
+  flex: 25%;
+}
+
+.col-50 {
+  -ms-flex: 50%; /* IE10 */
+  flex: 50%;
+}
+
+.col-75 {
+  -ms-flex: 75%; /* IE10 */
+  flex: 75%;
+}
+
+.col-25,
+.col-50,
+.col-75 {
+  padding: 0 16px;
+}
+
+.container {
+  background-color: #f2f2f2;
+  padding: 5px 20px 15px 20px;
+  border: 1px solid lightgrey;
+  border-radius: 3px;
+}
+
+input[type=text] {
+  width: 100%;
+  margin-bottom: 20px;
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 3px;
+}
+
+label {
+  margin-bottom: 10px;
+  display: block;
+}
+
+.icon-container {
+  margin-bottom: 20px;
+  padding: 7px 0;
+  font-size: 24px;
+}
+
+.btn {
+  background-color: #4CAF50;
+  color: white;
+  padding: 12px;
+  margin: 10px 0;
+  border: none;
+  width: 100%;
+  border-radius: 3px;
+  cursor: pointer;
+  font-size: 17px;
+}
+
+.btn:hover {
+  background-color: #45a049;
+}
+
+a {
+  color: #2196F3;
+}
+
+hr {
+  border: 1px solid lightgrey;
+}
+
+span.price {
+  float: right;
+  color: grey;
+}
+
+/* Responsive layout - when the screen is less than 800px wide, make the two columns stack on top of each other instead of next to each other (also change the direction - make the "cart" column go on top) */
+@media (max-width: 800px) {
+  .row {
+    flex-direction: column-reverse;
+  }
+  .col-25 {
+    margin-bottom: 20px;
+  }
+}
+</style>
 </head>
 <body>
     <form id="form1" runat="server">
         <header class="top-navbar">
-            <nav class="navbar navbar-expand-lg navbar-light bg-light" style="position: static">
+            <nav class="navbar navbar-expand-lg navbar-light bg-light mb-2" style="position: static">
                 <div class="container">
-                    <a class="navbar-brand" href="index.html">
-                        Hoai Thu's restaurant
+                    <a class="navbar-brand" href="index.html">Hoai Thu's restaurant
                     </a>
                     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbars-rs-food" aria-controls="navbars-rs-food" aria-expanded="false" aria-label="Toggle navigation">
                         <span class="navbar-toggler-icon"></span>
@@ -48,14 +152,14 @@
                             <li class="nav-item"><a class="nav-link" href="DatBan.aspx">Đặt bàn</a></li>
                             <li class="nav-item"><a class="nav-link" href="ContactClients.aspx">Liên hệ</a></li>
                             <li class="nav-item d-flex">
-                                <a class="nav-link" href="Cart.aspx">Giỏ hàng</a>
+                                <a class="nav-link" href="contact.html">Giỏ hàng</a>
                             </li>
                             <li class="nav-item dropdown">
                                 <a class="nav-link dropdown-toggle" href="#" id="dropdown-a" data-toggle="dropdown">
                                     <asp:Label ID="username" runat="server"/>
                                     </a>
                                 <div class="dropdown-menu" aria-labelledby="dropdown-a">
-                                    <asp:Button ID="btndx" runat="server" Text="Đăng xuất" PostBackUrl="#" CssClass="btn btn-warning" OnClick="logout"/>
+                                    <asp:Button ID="btndx" runat="server" Text="Đăng xuất" PostBackUrl="#" CssClass="btn btn-warning"/>
                                     <asp:Button ID="btndn" runat="server" Text="Đăng nhập" PostBackUrl="~/DangNhap.aspx" CssClass="btn btn-warning"/>
                                     <asp:Button ID="btndk" runat="server" Text="Đăng ký"  PostBackUrl="~/DangKyClient.aspx" CssClass="btn btn-warning"/>
                                 </div>
@@ -65,50 +169,26 @@
                 </div>
             </nav>
         </header>
-        <div style="margin: 50px auto; width: 900px;">
-            <asp:GridView ID="gridCart" runat="server" 
-                AutoGenerateColumns="false"
-                CssClass="table table-bordered table-hover text-center"
-                >
-                <Columns>
-                    <asp:BoundField DataField="itemName" HeaderText="Tên món"  />
-                    <asp:BoundField DataField="quantity" HeaderText="Số lượng" />
-                    <asp:BoundField DataField="price" HeaderText="Đơn giá"  />
-                    <asp:BoundField DataField="subTotal" HeaderText="Thành tiền"  />
-                    <asp:TemplateField HeaderText="Xóa">
-                        <ItemTemplate>
-                            <asp:Button ID="xoa" CommandName="xoa" 
-                                CommandArgument='<%# Bind("itemId") %>'
-                                Text="Xóa"
-                                runat="server" 
-                                OnCommand="Xoa_Click"
-                                CssClass="btn btn-info"
-                                OnClientClick="return confirm('Bạn có chắc xóa món này khỏi giỏ không?')"
-                                />
-                        </ItemTemplate>
-                    </asp:TemplateField>
-                </Columns>
+        <div class="row">
+            <div class="col-75">
+                <div class="container">
+                        <div class="row">
+                            <div class="col-50">
+                                <h1>Hóa đơn</h1>
+                                
+                                <asp:TextBox ID="txtTen" Font-Names="firstname" placeholder ="Họ tên" runat="server"/>
+                                <asp:TextBox ID="txtDiaChi"  runat="server" placeholder="Địa chỉ"/>
+                                <asp:TextBox ID="txtSoDt" runat="server" placeholder="Số điện thoại"/>
+                                <asp:TextBox ID="txtEmail" placeholder="Email" runat="server"/>
+                                
 
-            </asp:GridView>
-            <asp:Label ID="txtEmptyCart" runat="server" ForeColor="Red"/> 
-            <asp:Label ID="tongTien" runat="server" />
-            <div style="display:flex; justify-content: space-between; margin-top: 20px;" >
-                <asp:Button ID="muaTiep" 
-                    runat="server" 
-                    Text="Tiếp tục đặt món" 
-                    CssClass="btn btn-success" 
-                    Font-Size="10" 
-                    PostBackUrl="~/Home.aspx"
-                    />
-                <asp:Button Text="Thanh toán" 
-                    ID="thanhToan" 
-                    runat="server" 
-                    CssClass="btn btn-danger" 
-                    Font-Size="10"
-                    PostBackUrl="~/ThanhToan.aspx"
-                    />
+                            </div>
+
+                        </div>
+
+                        <asp:Button ID="btnThanhToan" runat="server" CssClass="btn" Text="Đặt món" OnClick="btnThanhToan_Click1"/>
+                </div>
             </div>
-            
         </div>
     </form>
     <!-- ALL JS FILES -->

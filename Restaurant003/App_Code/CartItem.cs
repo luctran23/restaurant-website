@@ -7,7 +7,7 @@ namespace Restaurant003.App_Code
 {
     public class CartItem
     {
-       
+        public int itemId { get; set; }
         public string itemName { get; set; }
         public int quantity { get; set; }
         public int price { get; set; }

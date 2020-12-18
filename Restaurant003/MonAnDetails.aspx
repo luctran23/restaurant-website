@@ -11,7 +11,7 @@
     </title>
     <!-- Mobile Metas -->
     <meta name="viewport" content="width=device-width, initial-scale=1"/>
- 
+    <link href="StyleSheet1.css" rel="stylesheet" />
     <meta name="keywords" content=""/>
     <meta name="description" content=""/>
     <meta name="author" content=""/>
@@ -43,18 +43,21 @@
                     <div class="collapse navbar-collapse" id="navbars-rs-food">
                         <ul class="navbar-nav ml-auto">
                             <li class="nav-item active"><a class="nav-link" href="index.html">Trang chủ</a></li>
-                            <li class="nav-item"><a class="nav-link" href="menu.html">Thực đơn</a></li>
-                            <li class="nav-item"><a class="nav-link" href="about.html">Giới thiệu</a></li>
-                            <li class="nav-item"><a class="nav-link" href="contact.html">Đặt bàn</a></li>
-                            <li class="nav-item"><a class="nav-link" href="contact.html">Liên hệ</a></li>
+                            <li class="nav-item"><a class="nav-link" href="Home.aspx">Thực đơn</a></li>
+                            <li class="nav-item"><a class="nav-link" href="About.aspx">Giới thiệu</a></li>
+                            <li class="nav-item"><a class="nav-link" href="DatBan.aspx">Đặt bàn</a></li>
+                            <li class="nav-item"><a class="nav-link" href="ContactClients.aspx">Liên hệ</a></li>
                             <li class="nav-item d-flex">
                                 <a class="nav-link" href="contact.html">Giỏ hàng</a>
                             </li>
                             <li class="nav-item dropdown">
-                                <a class="nav-link dropdown-toggle" href="#" id="dropdown-a" data-toggle="dropdown">Tài khoản</a>
+                                <a class="nav-link dropdown-toggle" href="#" id="dropdown-a" data-toggle="dropdown">
+                                    <asp:Label ID="username" runat="server"/>
+                                    </a>
                                 <div class="dropdown-menu" aria-labelledby="dropdown-a">
-                                    <a class="dropdown-item" href="blog.html">Đăng nhập</a>
-                                    <a class="dropdown-item" href="blog-details.html">Đăng ký</a>
+                                    <asp:Button ID="btndx" runat="server" Text="Đăng xuất" PostBackUrl="#" CssClass="btn btn-warning"/>
+                                    <asp:Button ID="btndn" runat="server" Text="Đăng nhập" PostBackUrl="~/DangNhap.aspx" CssClass="btn btn-warning"/>
+                                    <asp:Button ID="btndk" runat="server" Text="Đăng ký"  PostBackUrl="~/dang.aspx" CssClass="btn btn-warning"/>
                                 </div>
                             </li>
                         </ul>

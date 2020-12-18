@@ -40,7 +40,7 @@
                             </div>
                         </div>
                         <div class="input-group mb-3">
-                            <asp:TextBox ID="txtMatKhau" runat="server" placeholder="Mật khẩu" CssClass="form-control"/>
+                            <asp:TextBox ID="txtMatKhau" runat="server" placeholder="Mật khẩu" CssClass="form-control" TextMode="Password"/>
                             <div class="input-group-append">
                                 <div class="input-group-text">
                                     <span class="fas fa-lock"></span>

@@ -116,6 +116,56 @@ namespace Restaurant003.App_Code
             cmd.ExecuteNonQuery();
             con.Close();
         }
+        // tim kiem mon an theo ten
+        public List<MonAn> LayDsMonAnTheoTen(string tenMon)
+        {
+            List<MonAn> ds = new List<MonAn>();
+            string query = "select * from MonAn where tenMon = @tenMon";
+            con.Open();
+            SqlCommand cmd = new SqlCommand(query, con);
+            cmd.Parameters.AddWithValue("tenMon", tenMon);
+            SqlDataReader rd = cmd.ExecuteReader();
+            
+            while (rd.Read())
+            {
+                MonAn m = new MonAn();
+                m.maMon = (int)rd["maMon"];
+                m.tenMon = (string)rd["tenMon"];
+                m.soLuong = (int)rd["soLuong"];
+                m.donGia = (int)rd["donGia"];
+                m.anh = (string)rd["anh"];
+                m.giaKm = (int)rd["giaKm"];
+                m.maDm = (int)rd["maDm"];
+                ds.Add(m);
+            }
+            con.Close();
+            return ds;
+        }
+        // tim kiem mon an theo ma danh muc
+        public List<MonAn> LayDsMonAnTheoDm(int maDm)
+        {
+            List<MonAn> ds = new List<MonAn>();
+            string query = "select * from MonAn where maDm = @maDm";
+            con.Open();
+            SqlCommand cmd = new SqlCommand(query, con);
+            cmd.Parameters.AddWithValue("maDm", maDm);
+            SqlDataReader rd = cmd.ExecuteReader();
+
+            while (rd.Read())
+            {
+                MonAn m = new MonAn();
+                m.maMon = (int)rd["maMon"];
+                m.tenMon = (string)rd["tenMon"];
+                m.soLuong = (int)rd["soLuong"];
+                m.donGia = (int)rd["donGia"];
+                m.anh = (string)rd["anh"];
+                m.giaKm = (int)rd["giaKm"];
+                m.maDm = (int)rd["maDm"];
+                ds.Add(m);
+            }
+            con.Close();
+            return ds;
+        }
         //lay toan bo khach hang
         public List<KhachHang> LayDsKhachHang()
         {
@@ -138,6 +188,35 @@ namespace Restaurant003.App_Code
             con.Close();
             return ds;
         }
+        // them khach hang
+        public void ThemKhachHang(KhachHang m)
+        {
+            con.Open();
+            string query = "insert into KhachHang values(@tenKh, @diaChi, @soDienThoai, @email, @matKhau)";
+            SqlCommand cmd = new SqlCommand(query, con);
+            cmd.Parameters.AddWithValue("tenKh", m.tenKh);
+            cmd.Parameters.AddWithValue("diaChi", m.diaChi);
+            cmd.Parameters.AddWithValue("soDienThoai", m.soDienThoai);
+            cmd.Parameters.AddWithValue("email", m.email);
+            cmd.Parameters.AddWithValue("matKhau", m.matKhau);
+            cmd.ExecuteNonQuery();
+            con.Close();
+        }
+        // lay max makh
+        public int LayMaKh()
+        {
+            con.Open();
+            string query = "select Max(maKh) from KhachHang";
+            SqlCommand cmd = new SqlCommand(query, con);
+            SqlDataReader rd = cmd.ExecuteReader();
+            int maKh = 100;
+            if(rd.Read())
+            {
+                maKh = (int)rd[0];
+            }
+            con.Close();
+            return maKh;
+        }
         //lay toan bo lien he
         public List<LienHe> LayDsLienHe()
         {
@@ -157,6 +236,18 @@ namespace Restaurant003.App_Code
             }
             con.Close();
             return ds;
+        }
+        //them  lien he
+        public void ThemLienHe(LienHe m)
+        {
+            con.Open();
+            string query = "insert into LienHe values(@ten, @email, @chuThich)";
+            SqlCommand cmd = new SqlCommand(query, con);
+            cmd.Parameters.AddWithValue("ten", m.ten);
+            cmd.Parameters.AddWithValue("email", m.email);
+            cmd.Parameters.AddWithValue("chuThich", m.chuThich);
+            cmd.ExecuteNonQuery();
+            con.Close();
         }
         // lay toan bo tai khoan
         public List<TaiKhoan> LayDsTaiKhoan()
@@ -325,6 +416,20 @@ namespace Restaurant003.App_Code
             con.Close();
             return ds;
         }
+        // them yeu cau dat ban
+        public void ThemYcDatBan(YeuCauDatBan m)
+        {
+            con.Open();
+            string query = "insert into YcDatBan values(@hoten, @email, @soDt, @soLuongKhach, @ngay)";
+            SqlCommand cmd = new SqlCommand(query, con);
+            cmd.Parameters.AddWithValue("hoten", m.hoten);
+            cmd.Parameters.AddWithValue("email", m.email);
+            cmd.Parameters.AddWithValue("soDt", m.soDt);
+            cmd.Parameters.AddWithValue("soLuongKhach", m.soLuongKhach);
+            cmd.Parameters.AddWithValue("ngay", m.ngay);
+            cmd.ExecuteNonQuery();
+            con.Close();
+        }
         // lay danh sach hoa don
         public List<HoaDon> LayDsHoaDon()
         {
@@ -344,6 +449,31 @@ namespace Restaurant003.App_Code
             }
             con.Close();
             return ds;
+        }
+        // them hoa don
+        public void ThemHoaDon(HoaDon m)
+        {
+            con.Open();
+            string query = "insert into HoaDon values(@ngayLap, @maKh)";
+            SqlCommand cmd = new SqlCommand(query, con);
+            cmd.Parameters.AddWithValue("ngayLap", m.ngayLap);
+            cmd.Parameters.AddWithValue("maKh", m.maKh);
+            cmd.ExecuteNonQuery();
+            con.Close();
+        }
+        public int LayMaHd()
+        {
+            con.Open();
+            string query = "select Max(maHd) from HoaDon";
+            SqlCommand cmd = new SqlCommand(query, con);
+            SqlDataReader rd = cmd.ExecuteReader();
+            int maHd = 100;
+            if (rd.Read())
+            {
+                maHd = (int)rd[0];
+            }
+            con.Close();
+            return maHd;
         }
         // lay thong tin khach hang ban mahd
         public CtHoaDon Lay1KhBangMaHd(int maHd)
@@ -388,6 +518,19 @@ namespace Restaurant003.App_Code
             con.Close();
             return ds;
         }
+        // them chi tiet hoa don
+        public void ThemCtHoaDon(int maHd, int maMon, int soLuong, int donGia)
+        {
+            con.Open();
+            string query = "insert into CtHoaDon values(@maHd, @maMon, @soLuong, @donGia)";
+            SqlCommand cmd = new SqlCommand(query, con);
+            cmd.Parameters.AddWithValue("maHd", maHd);
+            cmd.Parameters.AddWithValue("maMon", maMon);
+            cmd.Parameters.AddWithValue("soLuong", soLuong);
+            cmd.Parameters.AddWithValue("donGia", donGia);
+            cmd.ExecuteNonQuery();
+            con.Close();
+        }
         // lay tong tien
         public int LayTongTien(int maHd)
         {
@@ -420,6 +563,45 @@ namespace Restaurant003.App_Code
             }
             con.Close();
             return matchedAcc;
+        }
+        // them tai khoan khach
+        public void ThemTkKhach(TaiKhoanKhach m)
+        {
+            con.Open();
+            string query = "insert into TaiKhoanKhach values(@email, @matKhau)";
+            SqlCommand cmd = new SqlCommand(query, con);
+            cmd.Parameters.AddWithValue("email", m.email);
+            cmd.Parameters.AddWithValue("matKhau", m.matKhau);
+            cmd.ExecuteNonQuery();
+            con.Close();
+        }
+        // lay ra 1 tai khoan thoa man username, password
+        public int KiemTraTkKhach(string email, string mk)
+        {
+            int matchedAcc = 0;
+            con.Open();
+            string query = "select count(*) from TaiKhoanKhach where email=@email and password=@mk";
+            SqlCommand cmd = new SqlCommand(query, con);
+            cmd.Parameters.AddWithValue("email", email);
+            cmd.Parameters.AddWithValue("mk", mk);
+            SqlDataReader rd = cmd.ExecuteReader();
+            while (rd.Read())
+            {
+                matchedAcc = (int)rd[0];
+            }
+            con.Close();
+            return matchedAcc;
+        }
+        // xoa gio hang
+        public void XoaGioHang(List<CartItem> ds,  int itemId)
+        {
+            for(var i = 0; i < ds.Count; i++)
+            {
+                if(ds[i].itemId == itemId)
+                {
+                    ds.RemoveAt(i);
+                }
+            }
         }
     }
 }

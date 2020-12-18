@@ -4,6 +4,16 @@
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="content" runat="server">
     <div style="padding: 3px;">
+        <div style="display: flex; margin: 10px 0px;">
+            <asp:TextBox ID="txtTimTenMon" runat="server" CssClass="form-control" placeholder="Nhập tên món"/>
+            <asp:DropDownList ID="txtTimDmMon" runat="server" size="1" CssClass="form-control"></asp:DropDownList>
+            <asp:DropDownList ID="ddlMaDm" runat="server" size="1" CssClass="form-control" AutoPostBack="true">
+                <asp:ListItem>Tên món</asp:ListItem>
+                <asp:ListItem>Danh mục</asp:ListItem>
+            </asp:DropDownList>
+            <asp:Button ID="btnTimKiem" runat="server" CssClass="btn btn-primary" Text="Tìm kiếm" OnClick="btnTimKiem_Click"/>
+        </div>
+        <asp:Label ID="testdm" runat="server" ForeColor="Red"/>
         <asp:GridView ID="gridMon" CssClass="table table-bordered table-hover text-center" runat="server" AutoGenerateColumns="False" AllowPaging="True" OnPageIndexChanging="gridMon_PageIndexChanging" PageSize="3" OnSelectedIndexChanged="gridMon_SelectedIndexChanged">
             <Columns>
                 <asp:BoundField DataField="maMon" HeaderText="Mã món" />
